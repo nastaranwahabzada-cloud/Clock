@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<title>ORBITAL — Solar System Clock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div><div class="nebula nebula-a"></div><div class="nebula nebula-b"></div>
+<main class="app">
+  <header class="nav">
+    <a class="logo" href="#"><span class="logo-symbol">✦</span><span>ORBITAL<small>TIME • SPACE • PRECISION</small></span></a>
+    <div class="nav-right"><span class="live"><i></i> SYSTEM ONLINE</span><button id="theme" class="round-btn" title="تغییر تم">◐</button><button id="full" class="round-btn" title="تمام صفحه">⛶</button></div>
+  </header>
+
+  <section class="intro">
+    <div class="overline"><span></span> A LUXURY COSMIC EXPERIENCE <span></span></div>
+    <h1>زمان در <b>مدار</b> زیبایی</h1>
+    <p>یک ساعت دیجیتال؛ الهام‌گرفته از عظمت منظومه شمسی</p>
+  </section>
+
+  <section class="main-grid">
+    <article class="clock-panel glass">
+      <div class="panel-top"><div><label>LOCAL COSMIC TIME</label><span class="sub-label" id="zoneName">زمان محلی دستگاه</span></div><div class="date-pill" id="date">---</div></div>
+      <div class="digital-line"><div class="digital" id="time">00:00:00</div><div class="period" id="period">24H</div></div>
+      <div class="day" id="day">---</div>
+      <div class="clock-footer"><span><i class="status-dot"></i> همگام‌سازی زنده</span><span id="greeting">به جهان ORBITAL خوش آمدید</span></div>
+    </article>
+
+    <article class="solar-panel glass">
+      <div class="solar-head"><div><label>SOLAR SYSTEM</label><h2>منظومه شمسی</h2></div><span class="orbit-icon">☼</span></div>
+      <div class="solar-scene" aria-label="نمایش تزئینی منظومه شمسی">
+        <div class="sun"><span>☀</span></div>
+        <div class="orbit o1"><i class="planet mercury"></i></div>
+        <div class="orbit o2"><i class="planet venus"></i></div>
+        <div class="orbit o3"><i class="planet earth"></i></div>
+        <div class="orbit o4"><i class="planet mars"></i></div>
+        <div class="orbit o5"><i class="planet jupiter"></i></div>
+        <div class="orbit o6"><i class="planet saturn"></i></div>
+        <div class="orbit o7"><i class="planet uranus"></i></div>
+        <div class="orbit o8"><i class="planet neptune"></i></div>
+      </div>
+      <div class="solar-caption"><span>☀ خورشید</span><span>۸ سیاره • مدارهای نمایشی</span></div>
+      <div class="planet-list">
+        <button data-planet="Mercury" data-fa="عطارد" data-info="نزدیک‌ترین سیاره به خورشید" class="planet-chip"><i class="dot mercury"></i>عطارد</button>
+        <button data-planet="Venus" data-fa="زهره" data-info="داغ‌ترین سیاره منظومه شمسی" class="planet-chip"><i class="dot venus"></i>زهره</button>
+        <button data-planet="Earth" data-fa="زمین" data-info="خانه‌ی ما؛ سیاره‌ی آبی" class="planet-chip"><i class="dot earth"></i>زمین</button>
+        <button data-planet="Mars" data-fa="مریخ" data-info="سیاره‌ی سرخ" class="planet-chip"><i class="dot mars"></i>مریخ</button>
+        <button data-planet="Jupiter" data-fa="مشتری" data-info="بزرگ‌ترین سیاره منظومه شمسی" class="planet-chip"><i class="dot jupiter"></i>مشتری</button>
+        <button data-planet="Saturn" data-fa="زحل" data-info="مشهور به حلقه‌های درخشان" class="planet-chip"><i class="dot saturn"></i>زحل</button>
+        <button data-planet="Uranus" data-fa="اورانوس" data-info="غول یخی با چرخشی متفاوت" class="planet-chip"><i class="dot uranus"></i>اورانوس</button>
+        <button data-planet="Neptune" data-fa="نپتون" data-info="دورترین سیاره از خورشید" class="planet-chip"><i class="dot neptune"></i>نپتون</button>
+      </div>
+      <div class="planet-info" id="planetInfo">برای مشاهده‌ی توضیح، نام یکی از سیاره‌ها را انتخاب کنید.</div>
+    </article>
+  </section>
+
+  <section class="settings glass">
+    <div class="settings-title"><div><label>PERSONAL CONTROL</label><h2>تنظیمات ساعت</h2></div><span>◈</span></div>
+    <div class="settings-grid">
+      <div class="setting"><span>فرمت زمان</span><div class="seg"><button id="h24" class="selected">۲۴ ساعته</button><button id="h12">۱۲ ساعته</button></div></div>
+      <div class="setting"><span>نمایش ثانیه</span><label class="toggle"><input id="seconds" type="checkbox" checked><i></i></label></div>
+      <div class="setting"><span>تاریخ شمسی</span><label class="toggle"><input id="persian" type="checkbox" checked><i></i></label></div>
+      <div class="setting"><span>منطقه زمانی</span><select id="timezone"><option value="local">محلی دستگاه</option><option value="Asia/Kabul">کابل</option><option value="Asia/Tehran">تهران</option><option value="Asia/Dubai">دبی</option><option value="Europe/London">لندن</option><option value="Europe/Paris">پاریس</option><option value="America/New_York">نیویورک</option><option value="Asia/Tokyo">توکیو</option></select></div>
+    </div>
+  </section>
+
+  <div class="planet-modal" id="planetModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="planet-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="modalPlanetName">
+      <button class="modal-close" id="closePlanet" type="button"
+              aria-label="بستن پنجره">×</button>
+      <div class="modal-orbit-art" id="modalPlanetArt">
+        <span class="modal-orbit-ring ring-one"></span>
+        <span class="modal-orbit-ring ring-two"></span>
+        <span class="modal-planet-core" id="modalPlanetCore"></span>
+        <span class="modal-spark spark-one">✦</span>
+        <span class="modal-spark spark-two">✧</span>
+      </div>
+      <div class="modal-copy">
+        <span class="modal-eyebrow">SOLAR SYSTEM / PLANET PROFILE</span>
+        <h2 id="modalPlanetName">زمین</h2>
+        <p class="modal-english" id="modalPlanetEnglish">EARTH</p>
+        <p class="modal-description" id="modalPlanetDescription"></p>
+        <div class="modal-facts">
+          <div><span>جایگاه از خورشید</span><strong id="modalPosition">۳</strong></div>
+          <div><span>نوع سیاره</span><strong id="modalType">سنگی</strong></div>
+        </div>
+        <div class="modal-footer"><span class="modal-live-dot"></span> ORBITAL PLANET ARCHIVE</div>
+      </div>
+    </section>
+  </div>
+
+  <footer><span>ORBITAL <b>✦</b> DIGITAL ATELIER</span><span>MADE OF TIME & STARDUST</span></footer>
+</main>
+<script src="script.js"></script>
+</body></html>
