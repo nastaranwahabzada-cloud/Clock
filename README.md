@@ -1,3 +1,4 @@
+
 # ORBITAL — Luxury Solar System Clock
 
 پروژه‌ی تک‌صفحه‌ای ساعت دیجیتال لوکس با منظومه شمسی متحرک.
@@ -20,3 +21,7 @@
 - `index.html` — ساختار صفحه
 - `style.css` — استایل‌ها، طراحی واکنش‌گرا و انیمیشن‌ها
 - `script.js` — ساعت، تنظیمات و تعامل سیاره‌ها
+
+# Clock
+ORBITAL — Where time meets the beauty of the cosmos. A luxurious digital clock inspired by the solar system, featuring live time and date, and a captivating design. More than just a clock, it's a journey through time and space.
+
